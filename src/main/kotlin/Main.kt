@@ -30,9 +30,8 @@ fun main(args: Array<String>) {
     val miniBus6 = Vehicle("TT021FF", VehicleType.MINIBUS)
     val bus6 = Vehicle("SS020FF",VehicleType.BUS)
 
-
-
-    val parking = Parking(mutableSetOf(car, moto, miniBus, bus,
+    val parking = Parking(mutableSetOf(
+        car, moto, miniBus, bus,
         car2, moto2, miniBus2, bus2,
         car3, moto3, miniBus3, bus3,
         car4, moto4, miniBus4, bus4,
@@ -41,9 +40,15 @@ fun main(args: Array<String>) {
         ))
 
     parking.vehicles.forEach {
-        if(parking.addVehicle(it)) println("Welcome to AlkeParking!")
+        if(parking.checkInVehicle(it)) println("Welcome to AlkeParking!")
         else println("Sorry, the check-in failed")
     }
+
+    val car7 = Vehicle("AA111AA", VehicleType.CAR, "DISCOUNT_CARD_001")
+
+    parking.checkInVehicle(car7)
+
+    parking.checkOutVehicle(moto)
 
 
 }
