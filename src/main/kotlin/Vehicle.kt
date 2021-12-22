@@ -1,6 +1,4 @@
-data class Vehicle(val plate: String, val type: VehicleType, val discountCard : String? = null) {
-    var parked : Boolean = false;
-
+data class Vehicle(val plate: String, val type: VehicleType, val discountCard : String = "") {
     //Function states that two Vehicles are if their plates are equal
     override fun equals(other: Any?) : Boolean {
         if(other is Vehicle) {
