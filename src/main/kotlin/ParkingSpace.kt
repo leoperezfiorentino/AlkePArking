@@ -23,5 +23,5 @@ class ParkingSpace {
 
     //Constant that store the total time that a vehicle stayed in the Parking Space in milliseconds
     val parkedTime: Double
-        get() = ((Calendar.getInstance().timeInMillis.toDouble() + 11580000 - checkInTime.timeInMillis.toDouble()) / 60000)
+        get() = ((Calendar.getInstance().timeInMillis.toDouble() - checkInTime.timeInMillis.toDouble()) / 60000)
 }
